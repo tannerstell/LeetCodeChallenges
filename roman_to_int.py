@@ -9,7 +9,7 @@ class Solution:
         number = 0
         
         while numeral != '':
-            sub_numeral, sub_number = self.numeralFinder(numeral, numerals) # sub numeral is the rightmost and longest string matched in the numeral dictionary
+            sub_numeral, sub_number = self.numeralFinder(numeral, numerals) # sub numeral is the rightmost and longest string matched in the numeral dictionary.
             numeral = numeral.rsplit(sub_numeral, 1)[0] # Right split the initial numeral string with the first instance of the sub numeral string
             number += sub_number # increment the sub number that was matched in the dictionary to the main number
         return number
@@ -17,4 +17,4 @@ class Solution:
     def numeralFinder(self, numeral, numerals):
         s = numeral
         sub_numeral, sub_number = [[s[-i:], numerals[s[-i:]]] for i in range(4, 0, -1) if s[-i:] in numerals.keys()][0] # list comprehension that matches the largest substring to dictionary value
-        return sub_numeral, sub_number
+        return sub_numeral, sub_number                                                                                  # Max of 4 length in range since the largest length string is 4 in the dictionary
