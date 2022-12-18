@@ -9,7 +9,7 @@ class Solution:
         number = 0
         
         while numeral != '':
-            sub_numeral, sub_number = self.numeralFinder(numeral, numerals) # sub numeral is the rightmost and largest length string matched in the numeral dictionary
+            sub_numeral, sub_number = self.numeralFinder(numeral, numerals) # sub numeral is the rightmost and longest string matched in the numeral dictionary
             numeral = numeral.rsplit(sub_numeral, 1)[0] # Right split the initial numeral string with the first instance of the sub numeral string
             number += sub_number # increment the sub number that was matched in the dictionary to the main number
         return number
