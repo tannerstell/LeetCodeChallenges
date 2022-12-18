@@ -7,12 +7,11 @@ class Solution:
         
         numeral = s
         number = 0
-        j = 0
         
         while numeral != '':
-            sub_numeral, sub_number = self.numeralFinder(numeral, numerals)
-            numeral = numeral.rsplit(sub_numeral, 1)[0]
-            number += sub_number
+            sub_numeral, sub_number = self.numeralFinder(numeral, numerals) # sub numeral is the rightmost and largest length string matched in the numeral dictionary
+            numeral = numeral.rsplit(sub_numeral, 1)[0] # Right split the initial numeral string with the first instance of the sub numeral string
+            number += sub_number # increment the sub number that was matched in the dictionary to the main number
         return number
     
     def numeralFinder(self, numeral, numerals):
