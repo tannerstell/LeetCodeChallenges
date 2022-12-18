@@ -16,5 +16,5 @@ class Solution:
     
     def numeralFinder(self, numeral, numerals):
         s = numeral
-        sub_numeral, sub_number = [[s[-i:], numerals[s[-i:]]] for i in range(4, 0, -1) if s[-i:] in numerals.keys()][0]
+        sub_numeral, sub_number = [[s[-i:], numerals[s[-i:]]] for i in range(4, 0, -1) if s[-i:] in numerals.keys()][0] # list comprehension that matches the largest substring to dictionary value
         return sub_numeral, sub_number
